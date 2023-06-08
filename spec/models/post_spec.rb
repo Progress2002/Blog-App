@@ -6,8 +6,6 @@ RSpec.describe Post, type: :model do
     Post.new(user_id: user.id, title: 'Hello', text: 'This is my post', comment_counter: 1, likes_counter: 1)
   end
 
-  # before { subject.save }
-
   context 'Testing validation' do
     it 'Title should be invalid with nil value' do
       subject.title = nil
