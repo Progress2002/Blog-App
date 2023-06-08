@@ -1,9 +1,9 @@
 class Like < ApplicationRecord
   belongs_to :user, foreign_key: 'user_id'
   belongs_to :post
+  after_save :update_like_counter
 
-  def udate_counter
-    post = Post.find_by(id: post_id)
-    post.likes_counter = Like.where(post_id: post_id).count
+  def update_like_counter
+    post.update(likes_counter: post.likes.count)
   end
 end
