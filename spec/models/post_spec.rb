@@ -34,7 +34,6 @@ RSpec.describe Post, type: :model do
   end
 
   describe 'Functionality' do
-
     let(:user) do
       User.create(
         name: 'John Doe',
@@ -43,7 +42,7 @@ RSpec.describe Post, type: :model do
         posts_counter: 0
       )
     end
-  
+
     subject do
       Post.new(
         title: 'Test Post',

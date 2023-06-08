@@ -1,7 +1,6 @@
 require_relative '../rails_helper'
 
 RSpec.describe Like, type: :model do
-
   subject { Like.new }
 
   before { subject.save }
