@@ -72,3 +72,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+# Used in testing to check if a specific template is rendered
+gem 'rails-controller-testing'
