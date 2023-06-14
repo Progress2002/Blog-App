@@ -2,9 +2,7 @@
   <%# Home button start %>
   <div id="user-page">
     <div class="btn-container">
-      <button class="btn">
         <%= link_to "Home", "../../../"  %>
-      </button>
     </div>
     <%# End fo Home button  %>
     <div class="single-post-container">
@@ -13,9 +11,9 @@
         <div class="info">
           <div>
             <h2 class="title"><%= @post.title %></h2>
-            <p>by <%= @user.name %></p>
+            <p class="user-name">by <%= @user.name %></p>
           </div>
-          <p class="post-data">
+          <p class="posts-counter">
             Comment: <%= @post.comment_counter || 0 %>, Likes: <%= @post.likes_counter || 0 %>
           </div>
           <div class="post-body">
@@ -32,7 +30,7 @@
               </li>
             <% end %>
           <% else %>
-            <p>No comments added yet.</p>
+            <li>No comments added yet...</li>
           <% end %>
         </ul>
         <%# End of Comments container  %>
