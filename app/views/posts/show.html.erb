@@ -24,7 +24,7 @@
         <%# Comments container start %>
         <ul class="comments-container">
           <% if @comments.any?  %>
-            <% @comments.each do |commet| %>
+            <% @comments.each do |comment| %>
               <li>
                 <p><%= User.find_by(id: comment.user_id).name %>: <%= comment.text %></p>
               </li>
