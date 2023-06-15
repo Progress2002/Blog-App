@@ -20,13 +20,9 @@ module UsersHelper
   def render_post(user, post)
     link_to(user_post_path(user, post)) do
       content_tag(:div, class: "post-container") do
-        concat(content_tag(:h3, class: "post-title") do
-          "#{post.title}"
-        end)
+        concat(content_tag(:h3, post.title, class: "post-title"))
         concat(content_tag(:div, class: "post-details") do
-          concat(content_tag(:p, class: "details") do
-            "#{post.text[0..100]}..."
-          end)
+          concat(content_tag(:p, "#{post.text[0..100]}...", class: "details"))
         end)
         concat(content_tag(:div, class: "comment-like-container") do
           concat(content_tag(:p, class: "coment-likes-data") do
