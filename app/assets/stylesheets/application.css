@@ -27,9 +27,10 @@ a {
 
 main {
   width: 90%;
-  min-height: 100vh;
+  min-height: 90vh;
   margin: auto;
   margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .users-list {
@@ -52,6 +53,7 @@ main {
 .user-profile-pic {
   width: 100px;
   height: 100px;
+  overflow: hidden;
 }
 
 .user-profile-pic img {
@@ -85,10 +87,11 @@ main {
 }
 
 article.user-bio {
-  border: 1px solid gray;
+  border: 1px dotted gray;
   margin: 20px 0 40px;
   padding: 12px 10px;
   text-align: left;
+  line-height: 1.3;
 }
 
 .user-bio h3 {
@@ -145,13 +148,22 @@ h2.title {
 .post-comments-container {
   display: flex;
   flex-direction: column;
-  gap: 18px;
-  border: 1px solid gray;
+  gap: 5px;
+  border: 1px dashed rgba(0, 0, 0, 0.3);
   margin-top: 15px;
+  padding: 8px 0;
 }
 
-.post-comments-container li {
+.post-comments-container li,
+.comments-container li {
   font-size: 18px;
+  line-height: 1.5;
+  padding: 0 15px;
+}
+
+.post-comments-container li:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.1);
+  mix-blend-mode: darken;
 }
 
 .post-comments-container {
@@ -161,9 +173,16 @@ h2.title {
 @media (min-width: 765px) {
   main {
     width: 70%;
-    min-height: 90vh;
     margin: auto;
     margin-bottom: 30px;
     margin-top: 30px;
+  }
+
+  h3 a:hover {
+    text-decoration: underline;
+  }
+
+  article.user-bio {
+    max-width: 80%;
   }
 }
