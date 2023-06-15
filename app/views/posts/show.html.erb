@@ -1,8 +1,8 @@
 <main id="post-index" class="page">
-  <%# Home button start %>
   <div id="user-page">
+    <%# Home button start %>
     <div class="btn-container">
-        <%= link_to "Home", "../../../"  %>
+      <%= link_to "Home", "../../../"  %>
     </div>
     <%# End fo Home button  %>
     <div class="single-post-container">
@@ -19,20 +19,13 @@
           <div class="post-body">
             <p><%= @post.text %></p>
           </div>
-        </article>
+      </article>
         <%# End of user post %>
         <%# Comments container start %>
         <ul class="comments-container">
-          <% if @comments.any?  %>
-            <% @comments.each do |comment| %>
-              <li>
-                <p><%= User.find_by(id: comment.user_id).name %>: <%= comment.text %></p>
-              </li>
-            <% end %>
-          <% else %>
-            <li>No comments added yet...</li>
-          <% end %>
+          <%= render_all_comment(@comments)%>
         </ul>
         <%# End of Comments container  %>
-      </div>
-    </main>
+    </div>
+  </div>
+</main>
