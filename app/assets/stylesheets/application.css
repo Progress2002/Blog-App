@@ -79,11 +79,13 @@ main {
 }
 
 .btn-container a {
-  display: block;
-  text-decoration: underline;
-  color: blue;
+  display: inline-block;
+  color: #1f628d;
+  padding: 3px;
+  margin-top: 20px;
+  margin-bottom: 0;
   font-size: 22px;
-  margin-bottom: 20px;
+  text-decoration: underline;
 }
 
 article.user-bio {
@@ -172,14 +174,85 @@ h2.title {
   padding: 0 15px;
 }
 
-.post-comments-container li:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.1);
-  mix-blend-mode: darken;
+.post-comments-container li:nth-child(even) p {
+  border-top: 1px dotted rgba(0, 0, 0, 0.1);
 }
 
-.post-comments-container {
-  /* margin-bottom: 80px; */
+/* like and comment styles */
+
+.interaction {
+  display: flex;
+  justify-content: space-between;
 }
+
+label {
+  display: none;
+}
+
+textarea#comment_text,
+textarea#post_text {
+  display: block;
+  width: 100%;
+  height: 200px;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+input[type="submit"] {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  border-radius: 9px;
+  -webkit-box-shadow: 0 1px 3px #666;
+  -moz-box-shadow: 0 1px 3px #666;
+  box-shadow: 0 1px 3px #666;
+  font-family: Courier, sans-serif;
+  font-weight: bolder;
+  color: #fff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 4px;
+  text-decoration: none;
+}
+
+input[type="submit"]:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+
+.post-inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"],
+textarea#post_text {
+  padding: 10px;
+  resize: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+#form-page {
+  max-width: 400px;
+}
+
+#post-form-page {
+  max-width: 600px;
+}
+
+/* like and comment styles end */
 
 @media (min-width: 765px) {
   main {

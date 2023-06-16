@@ -28,7 +28,7 @@ module PostsHelper
           content_tag(:p, class: 'coment-likes-data container') do
             comment = post.comment_counter || 0
             likes = post.likes_counter || 0
-            "Comment: #{comment}, Likes: #{likes}"
+            "Comments: #{comment}, Likes: #{likes}"
           end
         end)
         concat(render_few_comment(post))
@@ -38,15 +38,15 @@ module PostsHelper
 
   def render_all_comment(comments)
     if comments.any?
-      comments.each do |comment|
+      safe_join(comments.map do |comment|
         content_tag(:li) do
           content_tag(:p) do
-            user_name = User.find_by(id: comment.user_id).name
+            user_name = User.find_by(id: comment.user_id)&.name
             user_comment = comment.text
-            "#{user_name}: #{user_comment}"
+            "#{user_name}: #{user_comment}".html_safe
           end
         end
-      end
+      end)
     else
       content_tag(:li, 'No comments added yet..')
     end

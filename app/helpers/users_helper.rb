@@ -26,7 +26,7 @@ module UsersHelper
         end)
         concat(content_tag(:div, class: 'comment-like-container') do
           content_tag(:p, class: 'coment-likes-data') do
-            "Comment: #{post.comment_counter || 0}, Likes #{post.likes_counter || 0}"
+            "Comments: #{post.comment_counter || 0}, Likes #{post.likes_counter || 0}"
           end
         end)
       end
