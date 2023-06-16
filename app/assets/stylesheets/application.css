@@ -172,13 +172,8 @@ h2.title {
   padding: 0 15px;
 }
 
-.post-comments-container li:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.1);
-  mix-blend-mode: darken;
-}
-
-.post-comments-container {
-  /* margin-bottom: 80px; */
+.post-comments-container li:nth-child(even) p {
+  border-top: 1px dotted rgba(0, 0, 0, 0.1);
 }
 
 @media (min-width: 765px) {

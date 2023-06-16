@@ -1,0 +1,16 @@
+<main class="page">
+  <%# Home button start %>
+  <div id="user-page">
+    <div class="btn-container">
+      <%= link_to "Home", user_path(@current_user)  %>
+    </div>
+    <%# End fo Home button  %>
+    <h1>Create a Post</h1>
+    <%= form_with(model: @post, url:  user_create_post_path, method: :post, remote: false ) do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :text  %>
+      <%= f.text_area :text %>
+      <%= f.submit "Create Post" %>
+    <% end %>
+  </main>

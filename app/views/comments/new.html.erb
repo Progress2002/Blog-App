@@ -1,0 +1,8 @@
+<main class="page">
+  <h1>Add a comment</h1>
+  <%= form_with(model: @comment, url: user_post_comments_path, method: :post) do |f| %>
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+    <%= f.submit "Add" %>
+  <% end %>
+</main>

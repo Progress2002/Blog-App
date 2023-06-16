@@ -19,13 +19,19 @@
           <div class="post-body">
             <p><%= @post.text %></p>
           </div>
-      </article>
+          <%= form_with(model: @like, url: user_post_likes_path(@user, @post), method: :post, remote: false) do |form| %>
+            <%= form.submit "Like" %>
+          <% end %>
+        </article>
         <%# End of user post %>
         <%# Comments container start %>
+        <div class="btn-container">
+          <%= link_to "Add comment", new_user_post_comment_path(@user, @post) %>
+        </div>
         <ul class="comments-container">
           <%= render_all_comment(@comments)%>
         </ul>
         <%# End of Comments container  %>
+      </div>
     </div>
-  </div>
-</main>
+  </main>
