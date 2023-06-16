@@ -1,6 +1,7 @@
 class Comment < ApplicationRecord
   belongs_to :user, foreign_key: 'user_id'
   belongs_to :post
+  validates_presence_of :text
   after_create :update_comment_counter
 
   def update_comment_counter
