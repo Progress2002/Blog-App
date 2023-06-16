@@ -51,5 +51,4 @@ module PostsHelper
       content_tag(:li, 'No comments added yet..')
     end
   end
-  
 end

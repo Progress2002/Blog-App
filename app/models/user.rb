@@ -21,5 +21,4 @@ class User < ApplicationRecord
   def add_user_like(post_id)
     likes.create(post_id: post_id)
   end
-
 end

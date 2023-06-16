@@ -1,7 +1,7 @@
 class LikesController < ApplicationController
-    def create
+  def create
     @user = User.find(params[:user_id])
-    
+
     if @user.user_has_liked(params[:post_id])
       @user.remove_user_like(params[:post_id])
     else
