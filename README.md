@@ -117,6 +117,13 @@ rails server
 - LinkedIn: [@Progress](https://www.linkedin.com/in/progress-ezeamaka-27b114247)
 - Frontend Mentor - [@Progress2002](https://www.frontendmentor.io/profile/progress2002)
 
+👤 **Shafiu Ibn Yushawu**
+
+- GitHub: [@shafiuyushawu](https://github.com/shafiuyushawu)
+- Twitter: [@shafiuyushawu](https://twitter.com/shafiuyushawu)
+- LinkedIn: [shafiuyushawu](https://linkedin.com/in/shafiuyushawu)
+
+
 
 ## 🔭 Future Features <a name="future-features"></a>
 
