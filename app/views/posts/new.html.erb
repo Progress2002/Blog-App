@@ -1,4 +1,4 @@
-<main class="page" id="post-form-page" >
+<div class="page" id="post-form-page" >
     <h1>Create New Post</h1>
     <%= form_with(model: @post, url:  user_create_post_path, method: :post, remote: false ) do |f| %>
       <div class="post-inputs">
@@ -11,4 +11,4 @@
       </div>
         <%= f.submit "Create Post" %>
     <% end %>
-  </main>
+</div>

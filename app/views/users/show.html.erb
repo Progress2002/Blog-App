@@ -1,4 +1,4 @@
-<main id="user-index" class="page">
+<div id="user-index" class="page">
   <%# Home button start %>
   <div id="user-page">
     <div class="btn-container">
@@ -28,10 +28,13 @@
       <%= @posts.map { |post| render_post(@user, post) }.join.html_safe %>
     </article>
     <%# end of post %>
-    <%# see all post button %>
-    <div class="btn-container see-posts">
-      <%= link_to "See all posts", user_posts_path(@user) %>
-    </div>
+  
+    <% if @post_counter > 3 %>
+          <div class="btn-container see-posts">
+            <%= link_to "See all posts", user_posts_path(@user) %>
+          </div>
+      <%end%>
+    
     <%# end of see all button %>
   </div>
-</main>
+</div>
