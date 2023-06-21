@@ -1,6 +1,6 @@
-<main id="home" class="page">
+<div id="home" class="page">
   <h1>Users</h1>
   <ul class="users-list">
     <%= @users.map { |user| render_user(user) }.join.html_safe %>
   </ul>
-</main>
+</div>
