@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  transition: all 0.2s linear;
 }
 
 body {
@@ -23,6 +24,11 @@ h1 {
 a {
   text-decoration: none;
   color: black;
+}
+
+img[alt] {
+  font-weight: normal;
+  font-size: 13px;
 }
 
 main {
@@ -185,10 +191,6 @@ h2.title {
   justify-content: space-between;
 }
 
-label {
-  display: none;
-}
-
 textarea#comment_text,
 textarea#post_text {
   display: block;
@@ -197,11 +199,8 @@ textarea#post_text {
   padding: 10px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 20px;
+.actions {
+  text-align: center;
 }
 
 input[type="submit"] {
@@ -220,6 +219,8 @@ input[type="submit"] {
   padding: 10px 20px 10px 20px;
   border: solid #1f628d 4px;
   text-decoration: none;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
 input[type="submit"]:hover {
@@ -232,16 +233,67 @@ input[type="submit"]:hover {
   flex-direction: column;
 }
 
-input[type="text"],
-textarea#post_text {
-  padding: 10px;
+label:not([for^="user_remember_me"]) {
+  display: none;
+}
+
+label[for="user_remember_me"] {
+  font-size: 18px;
+}
+
+em.info {
+  font-size: 15px;
+}
+
+textarea#post_text,
+textarea#comment_text {
+  padding: 10px 5px;
   resize: none;
-  overflow: auto;
+  overflow: hidden;
   outline: none;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 8px 5px 12px;
+  resize: none;
+  overflow: hidden;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #666;
+  width: calc(100% -13vh);
+}
+
+input[type="checkbox"] {
+  accent-color: #3498db;
+  cursor: pointer;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-bottom: 3px solid #3498db;
+}
+
+.notice,
+.alert {
+  font-size: 16px;
+  font-weight: normal;
+  color: #3498db;
+}
+
+#form-page form,
+#post-form-page,
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 
 #form-page {
@@ -252,6 +304,49 @@ textarea#post_text {
   max-width: 600px;
 }
 
+h2.form-title {
+  text-align: center;
+  margin: 10px 0 20px;
+}
+
+#log-in-page a {
+  color: blue;
+  font-size: 16px;
+  text-decoration: none;
+  display: block;
+  letter-spacing: normal;
+}
+
+#log-in-page a:hover {
+  text-decoration: underline;
+}
+
+.shared-links {
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 18px;
+}
+
+.shared-links.sign-up {
+  display: block;
+}
+
+.shared-links a {
+  display: block;
+  color: #666;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+.shared-links a:hover {
+  color: #3498db;
+  letter-spacing: 2px;
+  text-decoration: underline;
+}
+
 /* like and comment styles end */
 
 @media (min-width: 765px) {
@@ -260,6 +355,14 @@ textarea#post_text {
     margin: auto;
     margin-bottom: 30px;
     margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  main div.page {
+    width: 100%;
   }
 
   h3 a:hover {
@@ -268,5 +371,21 @@ textarea#post_text {
 
   article.user-bio {
     max-width: 80%;
+  }
+
+  #log-in-page {
+    width: 410px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    padding: 8px 10px 12px;
+    resize: none;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #666;
+    width: 100%;
   }
 }
