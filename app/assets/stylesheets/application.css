@@ -260,7 +260,7 @@ input[type="password"] {
   outline: none;
   border: none;
   border-bottom: 2px solid #666;
-  width: calc(100% - 13vh);
+  width: 100%;
 }
 
 input[type="checkbox"] {
@@ -316,7 +316,7 @@ h2.form-title {
   flex-direction: row-reverse;
   justify-content: center;
   margin-top: 50px;
-  gap: 18px;
+  gap: 12px;
 }
 
 .shared-links a:hover {
@@ -330,6 +330,7 @@ h2.form-title {
   font-size: 16px;
   text-decoration: none;
   display: block;
+  flex: 1;
   letter-spacing: normal;
 }
 
