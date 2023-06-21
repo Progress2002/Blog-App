@@ -21,7 +21,7 @@ class User < ApplicationRecord
     likes.find_by(post: post, user: user).destroy
   end
 
-  def add_user_like(post, user )
+  def add_user_like(post, user)
     likes.create(post: post, user: user)
   end
 end

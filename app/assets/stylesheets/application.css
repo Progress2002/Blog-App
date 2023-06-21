@@ -88,8 +88,7 @@ main {
   display: inline-block;
   color: #1f628d;
   padding: 3px;
-  margin-top: 20px;
-  margin-bottom: 0;
+  margin: 20px 0;
   font-size: 22px;
   text-decoration: underline;
 }
@@ -196,7 +195,14 @@ textarea#post_text {
   display: block;
   width: 100%;
   height: 200px;
-  padding: 10px;
+  padding: 10px 5px;
+  resize: none;
+  overflow: hidden;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
 }
 
 .actions {
@@ -245,18 +251,6 @@ em.info {
   font-size: 15px;
 }
 
-textarea#post_text,
-textarea#comment_text {
-  padding: 10px 5px;
-  resize: none;
-  overflow: hidden;
-  outline: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-}
-
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -266,11 +260,11 @@ input[type="password"] {
   outline: none;
   border: none;
   border-bottom: 2px solid #666;
-  width: calc(100% -13vh);
+  width: calc(100% - 13vh);
 }
 
 input[type="checkbox"] {
-  accent-color: #3498db;
+  background-color: #3498db;
   cursor: pointer;
 }
 
@@ -287,9 +281,9 @@ input[type="password"]:focus {
   color: #3498db;
 }
 
+form,
 #form-page form,
-#post-form-page,
-form {
+#post-form-page {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -309,6 +303,28 @@ h2.form-title {
   margin: 10px 0 20px;
 }
 
+.shared-links a {
+  display: block;
+  color: #666;
+  text-decoration: underline;
+  font-weight: normal;
+}
+
+.shared-links {
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 18px;
+}
+
+.shared-links a:hover {
+  color: #3498db;
+  letter-spacing: 2px;
+  text-decoration: underline;
+}
+
 #log-in-page a {
   color: blue;
   font-size: 16px;
@@ -321,30 +337,8 @@ h2.form-title {
   text-decoration: underline;
 }
 
-.shared-links {
-  display: flex;
-  width: 100%;
-  flex-direction: row-reverse;
-  justify-content: center;
-  margin-top: 50px;
-  gap: 18px;
-}
-
 .shared-links.sign-up {
   display: block;
-}
-
-.shared-links a {
-  display: block;
-  color: #666;
-  text-decoration: underline;
-  font-weight: normal;
-}
-
-.shared-links a:hover {
-  color: #3498db;
-  letter-spacing: 2px;
-  text-decoration: underline;
 }
 
 /* like and comment styles end */

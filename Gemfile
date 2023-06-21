@@ -15,7 +15,7 @@ gem 'sprockets-rails'
 # gem 'sqlite3', '~> 1.4'
 gem 'pg'
 
-# Use the devise gem as the session and account manager for the application 
+# Use the devise gem as the session and account manager for the application
 gem 'devise'
 
 # Use the Puma web server [https://github.com/puma/puma]
