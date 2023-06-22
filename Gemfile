@@ -79,9 +79,8 @@ end
 # Used in testing to check if a specific template is rendered
 gem 'rails-controller-testing'
 
-
 gem 'cancancan'
 
-gem "font-awesome-sass", "~> 6.4.0"
+gem 'font-awesome-sass', '~> 6.4.0'
 
 gem 'sassc'

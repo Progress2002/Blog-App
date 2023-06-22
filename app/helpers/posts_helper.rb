@@ -4,7 +4,7 @@ module PostsHelper
               method: :delete,
               data: { confirm: 'Are you sure?' },
               class: 'del-post-btn' do
-      submit_tag '|Delete', title: 'delete comment', id: 'delete' 
+      submit_tag '|Delete', title: 'delete comment', id: 'delete'
     end
   end
 
@@ -18,9 +18,7 @@ module PostsHelper
               user_comment = truncate(comment.text, length: 60, omission: '...')
               comment_content = "#{user_name}: #{user_comment}".html_safe
               concat(comment_content)
-              if can? :destroy, comment
-                concat(render_comment_delete_button(user, post, comment))
-              end
+              concat(render_comment_delete_button(user, post, comment)) if can? :destroy, comment
             end)
           end)
         end
@@ -58,9 +56,7 @@ module PostsHelper
             user_comment = comment.text
             comment_content = "#{user_name}: #{user_comment}".html_safe
             concat(comment_content)
-            if can? :destroy, comment
-              concat(render_comment_delete_button(user, post, comment))
-            end
+            concat(render_comment_delete_button(user, post, comment)) if can? :destroy, comment
           end
         end
       end)
