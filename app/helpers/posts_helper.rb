@@ -14,7 +14,7 @@ module PostsHelper
         post.recent_comments.each do |comment|
           concat(content_tag(:li, class: 'comment-box') do
             concat(content_tag(:p) do
-              user_name =  comment.user.name
+              user_name = comment.user.name
               user_comment = truncate(comment.text, length: 60, omission: '...')
               comment_content = "#{user_name}: #{user_comment}".html_safe
               concat(comment_content)
