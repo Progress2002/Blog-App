@@ -1,5 +1,5 @@
 <div id="home" class="page">
-  <h1>Users</h1>
+  <h1>Users <i class="fa-solid fa-users"></i></h1>
   <ul class="users-list">
     <%= @users.map { |user| render_user(user) }.join.html_safe %>
   </ul>
