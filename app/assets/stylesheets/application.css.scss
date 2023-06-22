@@ -142,7 +142,8 @@ h2.title {
 .user-name {
   font-size: 19px;
   margin-bottom: 10px;
-  color: rgb(210, 57, 57);
+  color: #1f628d;
+  font-style: italic;
 }
 
 .post-body {
@@ -151,6 +152,7 @@ h2.title {
 
 .post-body p {
   line-height: 1.5;
+  font-size: 20px;
 }
 
 .comments-container,
@@ -211,7 +213,7 @@ textarea#post_text {
   text-align: center;
 }
 
-input[type="submit"] {
+input[type="submit"]:not([value="delete post"]) {
   background: #3498db;
   background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
   background-image: -o-linear-gradient(top, #3498db, #2980b9);
@@ -231,7 +233,28 @@ input[type="submit"] {
   margin-top: 20px;
 }
 
-input[type="submit"]:hover {
+#dell-post-btn {
+  border: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#dell-post-btn input {
+  border: none;
+  color: red;
+  font-weight: normal;
+  cursor: pointer;
+  font-style: italic;
+  transition: all 0.2s ease-in;
+  font-size: 15px;
+}
+
+#dell-post-btn input:hover {
+  text-decoration: underline;
+  letter-spacing: 1px;
+}
+
+input[type="submit"]:not([value="delete post"]):hover {
   background: #3cb0fd;
   text-decoration: none;
 }
@@ -344,6 +367,54 @@ h2.form-title {
   display: block;
 }
 
+section.flex {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  overflow: hidden;
+}
+
+section.flex div:nth-child(odd) {
+  position: relative;
+  top: 10px;
+}
+
+li.comment-box {
+  // display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+li.comment-box form button {
+  border: none;
+}
+
+li.comment-box form .del-post-btn #delete {
+  border: none;
+  background: none;
+  background-image: inherit;
+  background-color: inherit;
+  color: rgb(250, 158, 158);
+  font-weight: normal;
+  letter-spacing: 2px;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  outline: none;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  position: relative;
+  left: 3.5rem;
+  bottom: 5px;
+}
+
+li.comment-box form .del-post-btn #delete:hover {
+  color: red;
+  font-weight: bolder;
+}
+
 /* like and comment styles end */
 
 @media (min-width: 765px) {
@@ -384,5 +455,19 @@ h2.form-title {
     border: none;
     border-bottom: 2px solid #666;
     width: 100%;
+  }
+
+  li.comment-box {
+    display: flex;
+  }
+
+  li.comment-box form .del-post-btn #delete {
+    position: relative;
+    left: 0;
+    bottom: 0;
+  }
+
+  .post-body p {
+    line-height: 1.5;
   }
 }
