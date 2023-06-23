@@ -6,8 +6,8 @@ class PostsController < ApplicationController
     @posts = @user.posts
 
     respond_to do |format|
-      format.html 
-      format.json { render :json => @posts }
+      format.html
+      format.json { render json: @posts }
     end
   end
 
